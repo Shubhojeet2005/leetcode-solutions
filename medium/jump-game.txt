@@ -1,8 +1,8 @@
 # 55. Jump Game
 # Difficulty: Medium
 # Tags: Array, Dynamic Programming, Greedy
-# URL: https://leetcode.com/problems/jump-game/submissions/2062726968/
-# Solved At: 2026-07-10T10:10:29.719Z
+# URL: https://leetcode.com/problems/jump-game/submissions/2062733307/
+# Solved At: 2026-07-10T10:17:00.414Z
 #
 # Problem:
 # You are given an integer array nums. You are initially positioned at the array's first index, and each element in the array represents your maximum jump length at that position.
