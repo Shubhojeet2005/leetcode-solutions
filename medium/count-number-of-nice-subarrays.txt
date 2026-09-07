@@ -1,8 +1,8 @@
 # 1248. Count Number of Nice Subarrays
 # Difficulty: Medium
 # Tags: Array, Hash Table, Math, Sliding Window, Prefix Sum
-# URL: https://leetcode.com/problems/count-number-of-nice-subarrays/submissions/2133591547/
-# Solved At: 2026-09-07T06:51:05.739Z
+# URL: https://leetcode.com/problems/count-number-of-nice-subarrays/submissions/2133785886/
+# Solved At: 2026-09-07T10:41:53.881Z
 #
 # Problem:
 # Given an array of integers nums and an integer k. A continuous subarray is called nice if there are k odd numbers on it.
@@ -38,22 +38,22 @@
 # 	1 <= nums[i] <= 10^5
 # 	1 <= k <= nums.length
 
-           while(sum>k){
-            if(nums[left]%2!=0){
-           }
-            left++;
-                sum--;
-            }
+class Solution {
+public:
+    int numberOfSubarrays(vector<int>& nums, int k) {
+        return atMost(nums, k) - atMost(nums, k - 1);
+    }
+    int atMost(vector<int>& nums, int k) {
+        int count=0;
+        int left=0;
+        int sum=0;
         for(int right=0;right<nums.size();right++){
            if(nums[right]%2!=0){
              sum++;
            }
-        int sum=0;
-        int count=0;
-        int left=0;
-    int atMost(vector<int>& nums, int k) {
-    }
-        return atMost(nums, k) - atMost(nums, k - 1);
-    int numberOfSubarrays(vector<int>& nums, int k) {
-public:
-class Solution {
+           while(sum>k){
+            if(nums[left]%2!=0){
+                sum--;
+            }
+            left++;
+           }
