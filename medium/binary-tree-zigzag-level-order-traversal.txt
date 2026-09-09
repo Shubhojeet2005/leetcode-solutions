@@ -1,0 +1,54 @@
+# 103. Binary Tree Zigzag Level Order Traversal
+# Difficulty: Medium
+# Tags: Tree, Breadth-First Search, Binary Tree
+# URL: https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/submissions/2136881398/
+# Solved At: 2026-09-09T22:25:35.370Z
+#
+# Problem:
+# Given the root of a binary tree, return the zigzag level order traversal of its nodes' values. (i.e., from left to right, then right to left for the next level and alternate between).
+# 
+#  
+# Example 1:
+# 
+# Input: root = [3,9,20,null,null,15,7]
+# Output: [[3],[20,9],[15,7]]
+# 
+# 
+# Example 2:
+# 
+# Input: root = [1]
+# Output: [[1]]
+# 
+# 
+# Example 3:
+# 
+# Input: root = []
+# Output: []
+# 
+# 
+#  
+# Constraints:
+# 
+# 
+# 	The number of nodes in the tree is in the range [0, 2000].
+# 	-100 <= Node.val <= 100
+
+            vector<int> row(size);
+        while(!nodeQueue.empty()){
+            int size= nodeQueue.size();
+
+        int ltor=true;
+        nodeQueue.push(root);
+
+            for(int i=0;i<size;i++){
+                TreeNode* node =nodeQueue.front();
+                nodeQueue.pop();
+
+                int index= ltor?i:size-1-i;
+
+                row[index]= node->val;
+                if(node->left){
+                    nodeQueue.push(node->left);
+                }
+                if(node->right){
+                    nodeQueue.push(node->right);
